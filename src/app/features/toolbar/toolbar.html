@@ -1,0 +1,37 @@
+<div class="toolbar">
+  <input
+    class="search-input"
+    type="text"
+    placeholder="Search assets..."
+    [value]="assetService.searchQuery()"
+    (input)="onSearchInput($event)"
+  />
+
+  <div class="filter-group">
+    @for (option of filterOptions; track option.value) {
+      <button
+        class="filter-btn"
+        [class.active]="assetService.activeFilter() === option.value"
+        (click)="assetService.setFilter(option.value)"
+      >
+        {{ option.label }}
+      </button>
+    }
+  </div>
+
+  <div class="sort-group">
+    @for (option of sortOptions; track option.value) {
+      <button
+        class="sort-btn"
+        [class.active]="assetService.sortField() === option.value"
+        (click)="assetService.setSort(option.value)"
+      >
+        {{ option.label }}
+
+        @if (assetService.sortField() === option.value) {
+          {{ assetService.sortDirection() === 'asc' ? '↑' : '↓' }}
+        }
+      </button>
+    }
+  </div>
+</div>

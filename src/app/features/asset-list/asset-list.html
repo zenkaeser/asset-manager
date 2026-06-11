@@ -1,0 +1,25 @@
+<div class="asset-list-page">
+  <app-toolbar />
+
+  <p class="result-count">{{ assetService.filteredAssets().length }} assets</p>
+
+  <div class="asset-grid">
+    @for (asset of assetService.filteredAssets(); track asset.id) {
+      <div class="asset-card">
+        <div class="asset-card__type-badge">{{ asset.assetType }}</div>
+        <div class="asset-card__name">{{ asset.name }}</div>
+        <div class="asset-card__meta">
+          {{ asset.size | number }} bytes. {{ asset.dateAdded | date: 'mediumDate' }}
+        </div>
+
+        <div class="asset-card__tags">
+          @for (tag of asset.tags; track tag) {
+            <span class="tag">{{ tag }}</span>
+          }
+        </div>
+      </div>
+    } @empty {
+      <p class="empty-state">No assets match your search.</p>
+    }
+  </div>
+</div>
