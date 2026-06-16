@@ -31,7 +31,8 @@
               }
             ],
             "styles": ["src/styles.scss"],
-            "outputPath": "dist/asset-manager"
+            "outputPath": "dist/asset-manager",
+            "baseHref": "/asset-manager/"
           },
           "configurations": {
             "production": {
