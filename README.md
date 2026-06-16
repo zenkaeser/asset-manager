@@ -78,5 +78,7 @@ Open `http://localhost:4200`
 ---
 
 ## Screenshots
-
-<!-- Add screenshots after deployment -->
+![Grid view](docs/screenshots/grid-view.png)
+![List view](docs/screenshots/list-view.png)
+![Detail panel](docs/screenshots/detail-panel.png)
+![Multi Action Bar](docs/screenshots/bulk-action-bar.png)
