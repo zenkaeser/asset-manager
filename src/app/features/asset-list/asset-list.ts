@@ -8,7 +8,7 @@ import { formatBytes } from '../../core/utils/format-bytes';
 
 @Component({
   selector: 'app-asset-list',
-  imports: [Toolbar, DecimalPipe, DatePipe, BulkActionBar, AssetDetail],
+  imports: [Toolbar, DatePipe, BulkActionBar, AssetDetail],
   templateUrl: './asset-list.html',
   styleUrl: './asset-list.scss',
   standalone: true,
