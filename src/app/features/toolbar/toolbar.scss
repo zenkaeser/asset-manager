@@ -1,8 +1,12 @@
+:host {
+  margin: var(--space-sm) var(--space-md);
+}
+
 .toolbar {
   display: flex;
   align-items: center;
   gap: var(--space-md);
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-sm);
   flex-wrap: wrap;
 }
 

@@ -67,7 +67,7 @@ components/   # Reusable UI
 ## Running Locally
 
 ```bash
-git clone https://github.com/yourusername/asset-manager
+git clone https://github.com/zenkaeser/asset-manager
 cd asset-manager
 npm install
 ng serve

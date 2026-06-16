@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: var(--space-md);
+  margin: var(--space-lg)  var(--space-md) var(--space-sm) ;
   padding: 0 var(--space-xs);
 }
 
@@ -27,6 +27,10 @@
 .result-count {
   font-size: 1.3rem;
   color: var(--color-text-muted);
+}
+
+.asset-container {
+  margin: var(--space-sm) var(--space-md);
 }
 
 // --- Grid layout ---
@@ -55,7 +59,7 @@
 
   input[type='checkbox'] {
     position: absolute;
-    top: var(--space-sm);
+    top: 1.5rem;
     right: var(--space-sm);
     accent-color: var(--color-accent);
     width: 1.6rem;
@@ -78,7 +82,7 @@
     display: flex;
     align-items: center;
     gap: var(--space-md);
-    padding: var(--space-sm) var(--space-md);
+    padding: var(--space-sm) 4rem var(--space-sm) var(--space-md) ;
     border-radius: var(--radius-sm);
 
     .asset-card__name {
