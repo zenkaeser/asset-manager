@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: var(--space-lg)  var(--space-md) var(--space-sm) ;
+  margin: var(--space-lg) var(--space-md) var(--space-sm);
   padding: 0 var(--space-xs);
 }
 
@@ -82,7 +82,7 @@
     display: flex;
     align-items: center;
     gap: var(--space-md);
-    padding: var(--space-sm) 4rem var(--space-sm) var(--space-md) ;
+    padding: var(--space-sm) 4rem var(--space-sm) var(--space-md);
     border-radius: var(--radius-sm);
 
     .asset-card__name {
@@ -133,11 +133,27 @@
   background: rgba(224, 124, 74, 0.15);
   color: #e07c4a;
 }
-.asset-card__type-badge[data-type='document'] {
+.asset-card__type-badge[data-type='word'] {
   background: rgba(74, 144, 217, 0.15);
   color: #4a90d9;
 }
-.asset-card__type-badge[data-type='3d'] {
+.asset-card__type-badge[data-type='excel'] {
+  background: rgba(76, 175, 125, 0.15);
+  color: #4caf7d;
+}
+.asset-card__type-badge[data-type='powerPoint'] {
+  background: rgba(224, 85, 85, 0.15);
+  color: #e05555;
+}
+.asset-card__type-badge[data-type='pdf'] {
+  background: rgba(224, 160, 74, 0.15);
+  color: #e0a04a;
+}
+.asset-card__type-badge[data-type='text'] {
+  background: rgba(144, 144, 144, 0.15);
+  color: #909090;
+}
+.asset-card__type-badge[data-type='3D'] {
   background: rgba(76, 175, 125, 0.15);
   color: #4caf7d;
 }

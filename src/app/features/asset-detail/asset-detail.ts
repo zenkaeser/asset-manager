@@ -1,6 +1,7 @@
 import { Component, computed, inject } from '@angular/core';
 import { AssetService } from '../../core/services/asset.service';
 import { DatePipe } from '@angular/common';
+import { formatBytes } from '../../core/utils/format-bytes';
 
 @Component({
   selector: 'app-asset-detail',
@@ -22,19 +23,8 @@ export class AssetDetail {
       return '';
     }
 
-    return this.formatBytes(asset.size);
+    return formatBytes(asset.size);
   });
-
-  private formatBytes(bytes: number): string {
-    if (bytes === 0) {
-      return '0 B';
-    }
-
-    const units = ['B', 'KB', 'MB', 'GB'];
-    const i = Math.floor(Math.log(bytes) / Math.log(1024));
-
-    return `${(bytes / Math.pow(1024, i)).toFixed(2)} ${units[i]}`;
-  }
 
   onEscape(): void {
     this.assetService.closeDetail();

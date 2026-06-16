@@ -10,6 +10,7 @@ const FILTER_OPTIONS: { label: string; value: AssetType | 'all' }[] = [
   { label: 'Excel', value: 'excel' },
   { label: 'PowerPoint', value: 'powerPoint' },
   { label: 'Text', value: 'text' },
+  { label: 'PDF', value: 'pdf' },
   { label: '3D', value: '3D' },
 ];
 

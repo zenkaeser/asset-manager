@@ -32,7 +32,7 @@
         </div>
         <div class="asset-card__name">{{ asset.name }}</div>
         <div class="asset-card__meta">
-          {{ asset.size | number }} bytes. {{ asset.dateAdded | date: 'mediumDate' }}
+          {{ formatBytes(asset.size) }}. {{ asset.dateAdded | date: 'mediumDate' }}
         </div>
 
         <div class="asset-card__tags">

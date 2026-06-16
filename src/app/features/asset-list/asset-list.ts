@@ -4,6 +4,7 @@ import { Toolbar } from '../toolbar/toolbar';
 import { DatePipe, DecimalPipe } from '@angular/common';
 import { BulkActionBar } from '../toolbar/bulk-action-bar/bulk-action-bar';
 import { AssetDetail } from '../asset-detail/asset-detail';
+import { formatBytes } from '../../core/utils/format-bytes';
 
 @Component({
   selector: 'app-asset-list',
@@ -14,4 +15,5 @@ import { AssetDetail } from '../asset-detail/asset-detail';
 })
 export class AssetList {
   protected readonly assetService = inject(AssetService);
+  protected readonly formatBytes = formatBytes;
 }
