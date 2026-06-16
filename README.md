@@ -47,15 +47,20 @@ A portfolio project showcasing modern **Angular 21** patterns — signals-first,
 
 ## Project Structure
 
+```
 src/
-app/
-core/
-models/       # Asset interface, AssetType union
-services/     # AssetService — all state lives here
-features/
-asset-list/   # Main grid/list view
-asset-detail/ # Slide-in detail panel
-toolbar/      # Search, filter, sort controls
+  app/
+    core/
+      models/       # Asset interface, AssetType union
+      services/     # AssetService — all state lives here
+    features/
+      asset-list/   # Main grid/list view
+      asset-detail/ # Slide-in detail panel
+      toolbar/      # Search, filter, sort controls
+                    # bulk-action-bar/
+    shared/
+      components/   # Reusable UI
+```
 
 # bulk-action-bar/
 
