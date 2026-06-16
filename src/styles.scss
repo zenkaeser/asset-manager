@@ -1,1 +1,101 @@
 /* You can add global styles to this file, and also import other style files */
+
+@use 'tailwindcss';
+
+// --- Tokens ---
+:root {
+  // Colors
+  --color-bg-primary: #0f0f0f;
+  --color-bg-surface: #1a1a1a;
+  --color-bg-elevated: #242424;
+  --color-bg-hover: #2a2a2a;
+  --color-bg-selected: #1e2a3a;
+
+  --color-border: #2e2e2e;
+  --color-border-focus: #4a90d9;
+
+  --color-text-primary: #f0f0f0;
+  --color-text-secondary: #909090;
+  --color-text-muted: #606060;
+
+  --color-accent: #4a90d9;
+  --color-accent-hover: #5a9fe8;
+  --color-danger: #e05555;
+  --color-danger-hover: #e86666;
+  --color-success: #4caf7d;
+
+  // Type badges
+  --color-type-image: #7c6af7;
+  --color-type-video: #e07c4a;
+  --color-type-document: #4a90d9;
+  --color-type-3d: #4caf7d;
+
+  // Spacing
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+
+  // Radii
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  // Typography
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  // Transitions
+  --transition-fast: 120ms ease;
+  --transition-base: 200ms ease;
+}
+
+// --- Reset ---
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans), serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  // reset browser's default of 16px to 10px = 1rem
+  // scales the layout accordingly with user's default font size
+  // while still adhering to accessibility
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1rem;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+input {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}

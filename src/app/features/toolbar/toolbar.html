@@ -1,4 +1,4 @@
-<div class="toolbar">
+<div class="toolbar flex items-center wrap">
   <input
     class="search-input"
     type="text"
@@ -34,4 +34,16 @@
       </button>
     }
   </div>
+
 </div>
+
+<button class="view-toggle" (click)="assetService.toggleViewMode()">
+  @if(assetService.viewMode() === 'grid') {
+<!--@TODO convert this into own icon and text-->
+    ☰ List
+  }@else {
+    ⊞ Grid
+  }
+
+</button>
+

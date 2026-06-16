@@ -1,12 +1,13 @@
-import { AssetDetail } from '../asset-detail/asset-detail';
 import { AssetService } from '../../core/services/asset.service';
 import { Component, inject } from '@angular/core';
 import { Toolbar } from '../toolbar/toolbar';
 import { DatePipe, DecimalPipe } from '@angular/common';
+import { BulkActionBar } from '../toolbar/bulk-action-bar/bulk-action-bar';
+import { AssetDetail } from '../asset-detail/asset-detail';
 
 @Component({
   selector: 'app-asset-list',
-  imports: [AssetDetail, Toolbar, DecimalPipe, DatePipe],
+  imports: [Toolbar, DecimalPipe, DatePipe, BulkActionBar, AssetDetail],
   templateUrl: './asset-list.html',
   styleUrl: './asset-list.scss',
   standalone: true,

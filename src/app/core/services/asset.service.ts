@@ -13,6 +13,7 @@ export class AssetService {
   readonly sortField = signal<SortField>('dateAdded');
   readonly sortDirection = signal<SortDirection>('desc');
   readonly viewMode = signal<ViewMode>('grid');
+  readonly selectedAsset = signal<Asset | null>(null);
 
   private readonly _assets = signal<Asset[]>(MOCK_ASSETS);
 
@@ -79,5 +80,47 @@ export class AssetService {
       this.sortField.set(field);
       this.sortDirection.set('asc');
     }
+  }
+
+  toggleViewMode(): void {
+    this.viewMode.update((v) => (v === 'grid' ? 'list' : 'grid'));
+  }
+
+  toggleSelection(id: string): void {
+    this._selectedIds.update((set) => {
+      const next = new Set(set);
+      next.has(id) ? next.delete(id) : next.add(id);
+      return next;
+    });
+  }
+
+  toggleSelectAll(): void {
+    if (this.isAllSelected()) {
+      this._selectedIds.set(new Set());
+    } else {
+      this._selectedIds.set(new Set(this.filteredAssets().map((a) => a.id)));
+    }
+  }
+
+  clearSelection(): void {
+    this._selectedIds.set(new Set());
+  }
+
+  isSelected(id: string): boolean {
+    return this._selectedIds().has(id);
+  }
+
+  bulkDelete(): void {
+    const selected = this._selectedIds();
+    this._assets.update((assets) => assets.filter((a) => !selected.has(a.id)));
+    this.clearSelection();
+  }
+
+  openDetail(asset: Asset): void {
+    this.selectedAsset.set(asset);
+  }
+
+  closeDetail(): void {
+    this.selectedAsset.set(null);
   }
 }

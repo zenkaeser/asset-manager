@@ -1,59 +1,82 @@
-# AssetManager
+# Asset Manager
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.11.
+A portfolio project showcasing modern **Angular 21** patterns — signals-first, zoneless, standalone components throughout.
 
-## Development server
+🔗 **[Live Demo](https://yourusername.github.io/asset-manager/)**
 
-To start a local development server, run:
+---
+
+## Tech Stack
+
+| | |
+|---|---|
+| Framework | Angular 21 (standalone, zoneless) |
+| Language | TypeScript (strict mode) |
+| Styling | SCSS (no UI library) |
+| State | Angular Signals |
+| Deployment | GitHub Pages |
+
+---
+
+## Features
+
+- **Asset grid and list view** — toggle between layouts
+- **Signal-based search** — filters assets in real time as you type
+- **File type filtering** — images, videos, documents, 3D models
+- **Multi-column sort** — by name, date added, or file size with direction toggle
+- **Multi-select** — checkbox selection with bulk delete and download
+- **Bulk action bar** — appears contextually when assets are selected
+- **Asset detail panel** — slides in from the right with full metadata
+- **Keyboard support** — Escape closes the detail panel
+- **Click outside to close** — standard UX pattern on the detail overlay
+
+---
+
+## Angular 21 Patterns Showcased
+
+- `provideExperimentalZonelessChangeDetection()` — no Zone.js
+- Signals for all state — `signal()`, `computed()`, `.asReadonly()`
+- Standalone components only — zero NgModules
+- Modern control flow — `@if`, `@for`, `@switch`, `@empty`
+- Signal-based form inputs — no `FormControl`, no `ngModel`
+- `inject()` function — no constructor injection
+- `host` property for DOM events — no `@HostListener`
+- Immutable signal updates — `Set<string>` pattern for multi-select
+
+---
+
+## Project Structure
+
+src/
+app/
+core/
+models/       # Asset interface, FileType union
+services/     # AssetService — all state lives here
+features/
+asset-list/   # Main grid/list view
+asset-detail/ # Slide-in detail panel
+toolbar/      # Search, filter, sort controls
+
+# bulk-action-bar/
+
+shared/
+components/   # Reusable UI
+
+---
+
+## Running Locally
 
 ```bash
+git clone https://github.com/yourusername/asset-manager
+cd asset-manager
+npm install
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Open `http://localhost:4200`
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Screenshots
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+<!-- Add screenshots after deployment -->

@@ -1,12 +1,35 @@
 <div class="asset-list-page">
   <app-toolbar />
+  <app-bulk-action-bar />
+  <app-asset-detail />
+
+  <div class="list-hearder">
+    <label class="select-all">
+      <input
+        (change)="assetService.toggleSelectAll()"
+        [checked]="assetService.isAllSelected()"
+        type="checkbox"
+      />Select all
+    </label>
+    <span class="result-count">{{ assetService.filteredAssets().length }} assets</span>
+  </div>
 
   <p class="result-count">{{ assetService.filteredAssets().length }} assets</p>
 
-  <div class="asset-grid">
+  <div [class]="'asset-container asset-container--' + assetService.viewMode()">
     @for (asset of assetService.filteredAssets(); track asset.id) {
-      <div class="asset-card">
-        <div class="asset-card__type-badge">{{ asset.assetType }}</div>
+      <div
+        (click)="assetService.openDetail(asset)"
+        [class.selected]="assetService.isSelected(asset.id)"
+        class="asset-card"
+      >
+        <input
+          (change)="assetService.toggleSelection(asset.id)"
+          (click)="$event.stopPropagation()"
+          [checked]="assetService.isSelected(asset.id)"
+          type="checkbox"
+        />
+        <div class="asset-card__type-badge" [attr.data-type]="asset.assetType">{{ asset.assetType }}</div>
         <div class="asset-card__name">{{ asset.name }}</div>
         <div class="asset-card__meta">
           {{ asset.size | number }} bytes. {{ asset.dateAdded | date: 'mediumDate' }}

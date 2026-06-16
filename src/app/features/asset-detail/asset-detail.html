@@ -1,4 +1,74 @@
-@if (asset()) {
-  <p>{{ asset()?.id }}</p>
-  <p>{{ asset()?.name }}</p>
+@if (assetService.selectedAsset(); as asset) {
+  <div class="detail-overlay" (click)="assetService.closeDetail()">
+    <div class="detail-panel" (click(="$event.stopPropagation()">
+      <div class="detail-panel__header">
+        <h2 class="detail-panel__title">{{ asset.name }}</h2>
+        <button class="detial-panel__close" (click)="assetService.closeDetail()">X</button>
+      </div>
+
+      <div class="detail-panel__preview">
+        @if (asset.thumbnailUrl) {
+          <img [src]="asset.thumbnailUrl" [alt]="asset.name" />
+        } @else {
+          <div class="detail-panel__no-preview">
+            @switch (asset.assetType) {
+              @case ('image') {
+                🖼 No preview
+              }
+              @case ('video') {
+                🎬 No preview
+              }
+              @case ('word') {
+                📄 No preview
+              }
+              @case ('excel') {
+                No preview
+              }
+              @case ('powerPoint') {
+                No preview
+              }
+              @case ('text') {
+                No preview
+              }
+              @case ('3D') {
+                📦 No preview
+              }
+            }
+          </div>
+        }
+      </div>
+
+      <div class="detail-panel__metadata">
+        <div class="meta-row">
+          <span class="meta-label"> Type</span>
+          <span class="meta-value">{{ asset.assetType }}</span>
+        </div>
+        <div class="meta-row">
+          <span class="meta-label"> Size</span>
+          <span class="meta-value">{{ formattedSize() }}</span>
+        </div>
+        <div class="meta-row">
+          <span class="meta-label"> Added</span>
+          <span class="meta-value">{{ asset.dateAdded | date: 'medium' }}</span>
+        </div>
+        @if (asset.previewUrl) {
+          <div class="meta-row">
+            <span class="meta-label"> URL</span>
+            <span class="meta-value">{{ asset.previewUrl }}</span>
+          </div>
+        }
+      </div>
+
+      <div class="detail-panel__tags">
+        <span class="meta-label">Tags</span>
+        <span class="tags-list">
+          @for (tag of asset.tags; track tag) {
+            <span class="tag">{{ tag }}</span>
+          } @empty {
+            <span class="meta-value"> No tags</span>
+          }
+        </span>
+      </div>
+    </div>
+  </div>
 }

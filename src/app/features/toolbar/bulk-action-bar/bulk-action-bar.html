@@ -1,0 +1,13 @@
+@if (assetService.selectedCount() > 0) {
+  <div class="bulk-bar">
+    <span class="bulk-bar__count"> {{ assetService.selectedCount() }} selected </span>
+
+    <div class="bulk-bar__actions">
+      <button class="bulk-btn bulk-btn--download" (click)="onDownload()">Download</button>
+      <button class="bulk-btn bulk-btn--delete" (click)="onDelete()">Delete</button>
+      <button class="bulk-btn bulk-btn--clear" (click)="assetService.clearSelection()">
+        Clear
+      </button>
+    </div>
+  </div>
+}
