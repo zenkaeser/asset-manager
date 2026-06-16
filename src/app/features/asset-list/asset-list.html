@@ -3,7 +3,7 @@
   <app-bulk-action-bar />
   <app-asset-detail />
 
-  <div class="list-hearder">
+  <div class="list-header">
     <label class="select-all">
       <input
         (change)="assetService.toggleSelectAll()"
@@ -13,8 +13,6 @@
     </label>
     <span class="result-count">{{ assetService.filteredAssets().length }} assets</span>
   </div>
-
-  <p class="result-count">{{ assetService.filteredAssets().length }} assets</p>
 
   <div [class]="'asset-container asset-container--' + assetService.viewMode()">
     @for (asset of assetService.filteredAssets(); track asset.id) {
@@ -29,7 +27,9 @@
           [checked]="assetService.isSelected(asset.id)"
           type="checkbox"
         />
-        <div class="asset-card__type-badge" [attr.data-type]="asset.assetType">{{ asset.assetType }}</div>
+        <div class="asset-card__type-badge" [attr.data-type]="asset.assetType">
+          {{ asset.assetType }}
+        </div>
         <div class="asset-card__name">{{ asset.name }}</div>
         <div class="asset-card__meta">
           {{ asset.size | number }} bytes. {{ asset.dateAdded | date: 'mediumDate' }}

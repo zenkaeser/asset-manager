@@ -1,4 +1,5 @@
-<div class="toolbar flex items-center wrap">
+<div class="toolbar">
+
   <input
     class="search-input"
     type="text"
@@ -27,14 +28,12 @@
         (click)="assetService.setSort(option.value)"
       >
         {{ option.label }}
-
         @if (assetService.sortField() === option.value) {
           {{ assetService.sortDirection() === 'asc' ? '↑' : '↓' }}
         }
       </button>
     }
   </div>
-
 </div>
 
 <button class="view-toggle" (click)="assetService.toggleViewMode()">

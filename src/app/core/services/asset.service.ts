@@ -64,15 +64,15 @@ export class AssetService {
       this.filteredAssets().every((a) => this._selectedIds().has(a.id)),
   );
 
-  setSearch(query: string) {
+  setSearch(query: string): void {
     this.searchQuery.set(query);
   }
 
-  setFilter(filter: AssetType | 'all') {
+  setFilter(filter: AssetType | 'all'): void {
     this.activeFilter.set(filter);
   }
 
-  setSort(field: SortField) {
+  setSort(field: SortField): void {
     if (this.sortField() === field) {
       // toggle direction if same field is clicked again
       this.sortDirection.update((d) => (d === 'asc' ? 'desc' : 'asc'));

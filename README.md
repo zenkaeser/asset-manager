@@ -2,7 +2,7 @@
 
 A portfolio project showcasing modern **Angular 21** patterns — signals-first, zoneless, standalone components throughout.
 
-🔗 **[Live Demo](https://yourusername.github.io/asset-manager/)**
+🔗 **[Live Demo](https://zenkaeser.github.io/asset-manager/)**
 
 ---
 
@@ -50,7 +50,7 @@ A portfolio project showcasing modern **Angular 21** patterns — signals-first,
 src/
 app/
 core/
-models/       # Asset interface, FileType union
+models/       # Asset interface, AssetType union
 services/     # AssetService — all state lives here
 features/
 asset-list/   # Main grid/list view

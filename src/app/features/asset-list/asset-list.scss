@@ -29,7 +29,7 @@
   color: var(--color-text-muted);
 }
 
-// --- Grid Layout ---
+// --- Grid layout ---
 .asset-container--grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -55,8 +55,8 @@
 
   input[type='checkbox'] {
     position: absolute;
-    top: var(--soace-sm);
-    right: var(--soace-sm);
+    top: var(--space-sm);
+    right: var(--space-sm);
     accent-color: var(--color-accent);
     width: 1.6rem;
     height: 1.6rem;
@@ -74,7 +74,7 @@
   }
 
   // List mode overrides
-  .asset-container--list {
+  .asset-container--list & {
     display: flex;
     align-items: center;
     gap: var(--space-md);
@@ -119,19 +119,23 @@
   @include type-badge(#7c6af7);
 }
 
-// Simpler approach - set directly in template via [style] or use a  pipe
-// For now target the text context with attribute
+// Simpler approach — set directly in template via [style] or use a pipe
+// For now target the text content with attribute
 .asset-card__type-badge[data-type='image'] {
   background: rgba(124, 106, 247, 0.15);
+  color: #7c6af7;
 }
 .asset-card__type-badge[data-type='video'] {
   background: rgba(224, 124, 74, 0.15);
+  color: #e07c4a;
 }
 .asset-card__type-badge[data-type='document'] {
   background: rgba(74, 144, 217, 0.15);
+  color: #4a90d9;
 }
 .asset-card__type-badge[data-type='3d'] {
   background: rgba(76, 175, 125, 0.15);
+  color: #4caf7d;
 }
 
 .asset-card__name {
